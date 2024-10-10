@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ .title }}</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>{{ .title }}</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, I’m Rizki Ramadhan, a web developer passionate about creating efficient and scalable applications.</p>
+    </section>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <ul>
+            {{ range .projects }}
+            <li>
+                <h3>{{ .Name }}</h3>
+                <p>{{ .Description }}</p>
+                <a href="{{ .Link }}">View on GitHub</a>
+            </li>
+            {{ end }}
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:rizkirmdhn1215@gmail.com">rizkirmdhn1215@gmail.com</a></p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Rizki Ramadhan</p>
+    </footer>
+</body>
+</html>
